@@ -2,14 +2,13 @@ import data
 from selenium import webdriver
 from main import UrbanRoutesPage
 
+
 class TestUrbanRoutes:
 
     driver = None
 
     @classmethod
     def setup_class(cls):
-        # no lo modifiques, ya que necesitamos un registro adicional habilitado para recuperar el código de confirmación del teléfono
-
         from selenium.webdriver.chrome.options import Options as ChromeOptions
         chrome_options = ChromeOptions()
         chrome_options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
@@ -27,9 +26,9 @@ class TestUrbanRoutes:
         assert routes_page.get_to() == address_to
 
     """2 seleccionar la tarifa confort"""
-    def test__selecting_comfort_plan(self):
+    def test_selecting_comfort_plan(self):
         routes_page = UrbanRoutesPage(self.driver)
-        routes_page.select_comfort()
+        routes_page.select_comfort_plan()
         assert routes_page.get_name_comfort() == 'Comfort'
 
     """ 3 rellenar el numero telefonico"""

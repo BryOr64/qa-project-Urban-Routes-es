@@ -1,5 +1,4 @@
 # QA PROJECT URBAN ROUTES es
-***Bryan Orosco - QA-grupo10-Sprint 8vo  **TRIPLETEN*****
 
 Este proyecto realiza una prueba de automatizacion de la pagina web **URBAN ROUTES**. 
 Este proyecto es una aplicación web que proporciona servicios de transporte urbano. Permite a los usuarios 
@@ -10,10 +9,13 @@ automatizada.
 
 ## Instalación y Herramientas
 
-Instrucciones detalladas para instalar el proyecto para tal efecto de instalacion se esta utilizando 
-el Id **PYCHARM** para poder descargar pycharm puedes dirigiste [AQUI](https://www.jetbrains.com/pycharm/)
+Instrucciones detalladas para descargar el proyecto e instalar alguanos complementos que 
+necesitaremos en el proyecto son:
 
 ```python
+# El ID que se esta utilizando
+    PYCHARM descargalo en https://www.jetbrains.com/pycharm/
+
 # Clonar el repositorio
     git clone https://github.com/usuario/qa-project-Urban-Routes-es.git
 
@@ -33,8 +35,7 @@ el Id **PYCHARM** para poder descargar pycharm puedes dirigiste [AQUI](https://w
 # Estructura del Proyecto
  
  - **data.py** - contiene la información que se va a utilizar para las pruebas.
- - **main.py** - contiene las clases y los metodos
- - **RoutesPage.py** - contiene todos los localizadores.
+ - **main.py** - contiene los localizadores, clases y los metodos que se utilizaran.
  - **TestUrbanRoutes.py** - contiene todos los test que se realizaran.
  - **helps** - se encuentran 2 metodos 
    -  **retrieve_phone_code:** que nos ayuda con la recuperacion 
@@ -42,9 +43,12 @@ el Id **PYCHARM** para poder descargar pycharm puedes dirigiste [AQUI](https://w
    - **wait:** este metodo nos ayuda a colocar los tiempos de 
    espera en el codigo
 
+# Ejecución del Proyecto
+   1. Como primer paso tenemos que ver que este **ChromeDriver** instalado 
+     y que esten condfigurado en tu PATH
+   2. Ejecutar el archivo TestUrbanRoutes.py
 
-
-## LISTA DE COMPROBACION 
+# Lista de Comprobación
 
 | **PRUEBAS**                                                          | **ESTADO**   |
 |----------------------------------------------------------------------|--------------|

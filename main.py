@@ -58,36 +58,6 @@ class UrbanRoutesPage:
     def __init__(self, driver):
         self.driver = driver
 
-    '''def retrieve_phone_code(self, driver) -> str:
-        """Este código devuelve un número de confirmación de teléfono y lo devuelve como un string.
-        Utilízalo cuando la aplicación espere el código de confirmación para pasarlo a tus pruebas.
-        El código de confirmación del teléfono solo se puede obtener después de haberlo solicitado en la aplicación."""
-
-        import json
-        import time
-        from selenium.common import WebDriverException
-        code = None
-        for i in range(10):
-            try:
-                logs = [log["message"] for log in driver.get_log('performance') if log.get("message")
-                        and 'api/v1/number?number' in log.get("message")]
-                for log in reversed(logs):
-                    message_data = json.loads(log)["message"]
-                    body = driver.execute_cdp_cmd('Network.getResponseBody',
-                                                  {'requestId': message_data["params"]["requestId"]})
-                    code = ''.join([x for x in body['body'] if x.isdigit()])
-            except WebDriverException:
-                time.sleep(1)
-                continue
-            if not code:
-                raise Exception("No se encontró el código de confirmación del teléfono.\n"
-                                "Utiliza 'retrieve_phone_code' solo después de haber solicitado el código en tu aplicación.")
-            return code
-
-    def wait(self, element_visibility):
-        WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(element_visibility))
-    '''
-
     #metodos para la prueba 1 configurar la direccion from and to
     def set_from(self, pepito):
         helps.wait(self.from_field, self.driver)
@@ -121,7 +91,7 @@ class UrbanRoutesPage:
         helps.wait(self.comfort_mane, self.driver)
         return self.driver.find_element(*self.comfort_mane).text
 
-    def select_comfort(self):
+    def select_comfort_plan(self):
         self.click_flash_taxi()
         self.click_select_comfort()
 
@@ -130,9 +100,9 @@ class UrbanRoutesPage:
         helps.wait(self.phone_number_field, self.driver)
         self.driver.find_element(*self.phone_number_field).click()
 
-    def set_phone_number(self, numbers):
+    def set_phone_number(self, number_phone):
         helps.wait(self.phone_number, self.driver)
-        self.driver.find_element(*self.phone_number).send_keys(numbers)
+        self.driver.find_element(*self.phone_number).send_keys(number_phone)
 
     def next_phone_number(self):
         helps.wait(self.phone_number_bt_next, self.driver)
@@ -140,8 +110,8 @@ class UrbanRoutesPage:
 
     def set_code_phone_number(self):
         helps.wait(self.phone_number_code, self.driver)
-        code = helps.retrieve_phone_code(self.driver)
-        self.driver.find_element(*self.phone_number_code).send_keys(code)
+        code_phone = helps.retrieve_phone_code(self.driver)
+        self.driver.find_element(*self.phone_number_code).send_keys(code_phone)
 
     def confirm_code_phone_number(self):
         helps.wait(self.phone_number_code_confirm, self.driver)
@@ -151,9 +121,9 @@ class UrbanRoutesPage:
         helps.wait(self.phone_number_check, self.driver)
         return self.driver.find_element(*self.phone_number_check).text
 
-    def phone_number_client(self, numbers):
+    def phone_number_client(self, number_phone):
         self.click_number_field()
-        self.set_phone_number(numbers)
+        self.set_phone_number(number_phone)
         self.next_phone_number()
         self.set_code_phone_number()
         self.confirm_code_phone_number()
