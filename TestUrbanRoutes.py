@@ -9,12 +9,6 @@ class TestUrbanRoutes:
     @classmethod
     def setup_class(cls):
         # no lo modifiques, ya que necesitamos un registro adicional habilitado para recuperar el código de confirmación del teléfono
-        '''
-        from selenium.webdriver import DesiredCapabilities
-        capabilities = DesiredCapabilities.CHROME
-        capabilities["goog:loggingPrefs"] = {'performance': 'ALL'}
-        cls.driver = webdriver.Chrome(desired_capabilities=capabilities)
-        '''
 
         from selenium.webdriver.chrome.options import Options as ChromeOptions
         chrome_options = ChromeOptions()
@@ -33,7 +27,7 @@ class TestUrbanRoutes:
         assert routes_page.get_to() == address_to
 
     """2 seleccionar la tarifa confort"""
-    def test_comfort(self):
+    def test__selecting_comfort_plan(self):
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.select_comfort()
         assert routes_page.get_name_comfort() == 'Comfort'
@@ -41,16 +35,16 @@ class TestUrbanRoutes:
     """ 3 rellenar el numero telefonico"""
     def test_phone_number(self):
         routes_page = UrbanRoutesPage(self.driver)
-        number = data.phone_number
-        routes_page.phone_number(number)
-        assert routes_page.get_phone_number() == number
+        phone_number = data.phone_number
+        routes_page.phone_number_client(phone_number)
+        assert routes_page.get_phone_number() == phone_number
 
     """ 4 agregar una targeta de credito"""
     def test_add_target(self):
         routes_page = UrbanRoutesPage(self.driver)
-        number = data.card_number
-        code = data.card_code
-        routes_page.target_new(number, code)
+        card_number = data.card_number
+        card_code = data.card_code
+        routes_page.target_new(card_number, card_code)
         assert routes_page.select_target() == True
         assert routes_page.get_name_target() == 'Tarjeta'
 
@@ -70,7 +64,7 @@ class TestUrbanRoutes:
     """ 7 pedir 2 helados"""
     def test_icecream_add(self):
         routes_page = UrbanRoutesPage(self.driver)
-        routes_page.icecream_add()
+        routes_page.icecream_client()
         assert routes_page.get_icecream_num() == '2'
 
     """ 8 aparece un modal para pedir un taxi"""

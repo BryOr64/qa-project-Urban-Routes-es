@@ -30,12 +30,19 @@ el Id **PYCHARM** para poder descargar pycharm puedes dirigiste [AQUI](https://w
     o
     pip3 install pytest
 ```
-## Estructura del Proyecto
+# Estructura del Proyecto
  
- - data.py - contiene la información que se va a utilizar para las pruebas.
- - main.py - contiene las clases y los metodos
- - RoutesPage.py - contiene todos los localizadores.
- - TestUrbanRoutes.py - contiene todos los test que se realizaran.
+ - **data.py** - contiene la información que se va a utilizar para las pruebas.
+ - **main.py** - contiene las clases y los metodos
+ - **RoutesPage.py** - contiene todos los localizadores.
+ - **TestUrbanRoutes.py** - contiene todos los test que se realizaran.
+ - **helps** - se encuentran 2 metodos 
+   -  **retrieve_phone_code:** que nos ayuda con la recuperacion 
+   del codigo para introducir el numero telefonico.
+   - **wait:** este metodo nos ayuda a colocar los tiempos de 
+   espera en el codigo
+
+
 
 ## LISTA DE COMPROBACION 
 
