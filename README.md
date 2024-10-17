@@ -2,12 +2,20 @@
 
 Este proyecto realiza una prueba de automatizacion de la pagina web **URBAN ROUTES**. 
 Este proyecto es una aplicación web que proporciona servicios de transporte urbano. Permite a los usuarios 
-planificar rutas, solicitar taxis y seleccionar diferentes tarifas de servicio.Tendremos que realizar una 
-revision automatisada donde veremos en este test solamante la utomatizacion de la tarifa de taxis **COMFORT**
+planificar rutas, solicitar taxis y seleccionar diferentes tarifas de servicio.
+
+Tendremos que realizar una revision automatisada donde veremos testearemos solamante la utomatizacion de la 
+tarifa de taxis **COMFORT** para ver el funcionamiento. 
+
 podremos revisar y conocer mas del lenguaje de Python, tambien realizaremos varias pruebas para la ejecucion 
 automatizada.
 
-## Instalación y Herramientas
+##Herramientas
+
+las Herramientas que utilizaremos en este proyecto seran Python, selenium y pytest todo esto configurado en 
+el ID de pycharm.
+
+## Instalación de herramientas
 
 Instrucciones detalladas para descargar el proyecto e instalar alguanos complementos que 
 necesitaremos en el proyecto son:
@@ -47,6 +55,11 @@ necesitaremos en el proyecto son:
    1. Como primer paso tenemos que ver que este **ChromeDriver** instalado 
      y que esten condfigurado en tu PATH
    2. Ejecutar el archivo TestUrbanRoutes.py
+
+##Conclusiones
+En este proyecto pudimos ver las maneras que podemos llamar a un Xpath asi tambien pudimos
+ver que todas las pruebas pasaron correctamente sin reportar ningun error eso nos lleva a 
+la conclucion de que la tarifa de taxi **COMFORT** esta funcionando correctamente.
 
 # Lista de Comprobación
 
