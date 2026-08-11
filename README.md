@@ -1,76 +1,100 @@
-# QA PROJECT URBAN ROUTES es
+# 🚕 Urban Routes — QA Automation
 
-Este proyecto realiza una prueba de automatizacion de la pagina web **URBAN ROUTES**. 
-Este proyecto es una aplicación web que proporciona servicios de transporte urbano. Permite a los usuarios 
-planificar rutas, solicitar taxis y seleccionar diferentes tarifas de servicio.
+Proyecto de automatización de pruebas End-to-End para la aplicación web Urban Routes.
 
-Tendremos que realizar una revision automatisada donde veremos testearemos solamante la utomatizacion de la 
-tarifa de taxis **COMFORT** para ver el funcionamiento. 
+El objetivo del proyecto es validar el flujo completo de solicitud de un viaje en la tarifa Comfort mediante pruebas automatizadas desarrolladas con Python, Selenium WebDriver y Pytest.
 
-podremos revisar y conocer mas del lenguaje de Python, tambien realizaremos varias pruebas para la ejecucion 
-automatizada.
+## 🎯 Objetivo
 
-## Herramientas
+Automatizar los principales escenarios del proceso de solicitud de un taxi y verificar que las funcionalidades involucradas respondan correctamente.
 
-las Herramientas que utilizaremos en este proyecto seran Python, selenium y pytest todo esto configurado en 
-el ID de pycharm.
+## 🧪 Escenarios automatizados
 
-## Instalación de herramientas
+La suite valida los siguientes escenarios:
 
-Instrucciones detalladas para descargar el proyecto e instalar alguanos complementos que 
-necesitaremos en el proyecto son:
+1. Configuración de las direcciones de origen y destino.
+2. Selección de la tarifa Comfort.
+3. Registro del número telefónico.
+4. Registro de una tarjeta como método de pago.
+5. Envío de un mensaje al conductor.
+6. Solicitud de manta y pañuelos.
+7. Solicitud de dos helados.
+8. Validación del modal de búsqueda del taxi.
+9. Validación de la información del conductor.
 
-```python
-# El ID que se esta utilizando
-    PYCHARM descargalo en https://www.jetbrains.com/pycharm/
+## 🛠️ Tecnologías utilizadas
 
-# Clonar el repositorio
-    git clone https://github.com/usuario/qa-project-Urban-Routes-es.git
+- Python
+- Selenium WebDriver
+- Pytest
+- Git
+- GitHub
+- PyCharm
 
-# Entrar al directorio del proyecto
-    cd ./qa-project-Urban-Routes-es
+## 📂 Estructura del proyecto
 
-# Instalar selenium mediante la consola
-    pip install selenium
-    o
-    pip3 install selenium
+- `data.py` — Datos utilizados durante las pruebas.
+- `main.py` — Localizadores y métodos utilizados para interactuar con la aplicación.
+- `TestUrbanRoutes.py` — Casos de prueba automatizados.
+- `helps.py` — Funciones auxiliares y utilidades necesarias durante la ejecución.
 
-# Instalar Pytest mediante la consola
-    pip install pytest
-    o
-    pip3 install pytest
-```
-# Estructura del Proyecto
- 
- - **data.py** - contiene la información que se va a utilizar para las pruebas.
- - **main.py** - contiene los localizadores, clases y los metodos que se utilizaran.
- - **TestUrbanRoutes.py** - contiene todos los test que se realizaran.
- - **helps** - se encuentran 2 metodos 
-   -  **retrieve_phone_code:** que nos ayuda con la recuperacion 
-   del codigo para introducir el numero telefonico.
-   - **wait:** este metodo nos ayuda a colocar los tiempos de 
-   espera en el codigo
+## ▶️ Ejecución
 
-# Ejecución del Proyecto
-   1. Como primer paso tenemos que ver que este **ChromeDriver** instalado 
-     y que esten condfigurado en tu PATH
-   2. Ejecutar el archivo TestUrbanRoutes.py
+### 1. Clonar el repositorio
 
-# Conclusiones
-En este proyecto pudimos ver las maneras que podemos llamar a un Xpath asi tambien pudimos
-ver que todas las pruebas pasaron correctamente sin reportar ningun error eso nos lleva a 
-la conclucion de que la tarifa de taxi **COMFORT** esta funcionando correctamente.
+git clone https://github.com/BryOr64/qa-project-Urban-Routes-es.git
 
-# Lista de Comprobación
+### 2. Entrar al proyecto
 
-| **PRUEBAS**                                                          | **ESTADO**   |
-|----------------------------------------------------------------------|--------------|
-| *1. Configurar la dirección*                                         | ***PASSED*** |
-| *2. Seleccionar la tarifa comfort*                                   | ***PASSED*** |
-| *3. Rellenar el número de teléfono*                                  | ***PASSED*** |
-| *4. Agregar una tarjeta de crédito*                                  | ***PASSED*** |
-| *5. Escribir un mensaje para el conductor*                           | ***PASSED*** |
-| *6. Pedir una manta y pañuelos*                                      | ***PASSED*** |
-| *7. Pedir 2 helados*                                                 | ***PASSED*** |
-| *8. Aparecer el modal para buscar un taxi*                           | ***PASSED*** |
-| *9. Esperar a que aparezca la información del conductor en el modal* | ***PASSED*** |
+cd qa-project-Urban-Routes-es
+
+### 3. Instalar las dependencias
+
+Instalar Python, Selenium y Pytest según los requisitos del proyecto.
+
+### 4. Ejecutar las pruebas
+
+pytest TestUrbanRoutes.py
+
+## 📊 Resultados
+
+La suite automatizada contiene nueve comprobaciones relacionadas con el flujo de solicitud de un viaje.
+
+Durante la ejecución documentada del proyecto, las nueve pruebas finalizaron correctamente.
+
+## 💡 Habilidades aplicadas
+
+Este proyecto me permitió practicar:
+
+- Diseño y automatización de escenarios de prueba.
+- Automatización de pruebas web con Selenium WebDriver.
+- Uso de localizadores para interactuar con elementos de la interfaz.
+- Validación de resultados mediante pruebas automatizadas.
+- Organización del código de pruebas.
+- Manejo de datos de prueba.
+- Uso de funciones auxiliares.
+- Ejecución de pruebas mediante Pytest.
+- Control de versiones con Git y GitHub.
+
+## 🚀 Próximas mejoras
+
+Como evolución del proyecto se pueden incorporar:
+
+- Mayor reutilización de componentes de automatización.
+- Mejor documentación de casos de prueba.
+- Reportes automáticos de ejecución.
+- Capturas de pantalla ante pruebas fallidas.
+- Integración continua.
+- Refactorización progresiva siguiendo patrones de automatización.
+
+## 👤 Autor
+
+Bryan Orosco
+
+QA Engineer Junior | Ingeniería de Sistemas
+
+LinkedIn:
+https://www.linkedin.com/in/bryan-orosco-2312981bb/
+
+GitHub:
+https://github.com/BryOr64
